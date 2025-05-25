@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+package RPCDemoPkg;
+
+service RPCDemo {
+    rpc GetMultCoords (google.protobuf.Empty) returns (MultCoords){};
+    rpc GetImage (ImageRequest) returns (ImageResponse);
+    rpc GetTrailer (google.protobuf.Empty) returns (TrailerStatus);
+    rpc GetVelocity (google.protobuf.Empty) returns (Velocities);
+}
+
+message MultCoords {
+    repeated double values = 1 [packed=true]; 
+}
+
+message ImageRequest {}
+
+message ImageResponse {
+    bytes image_data = 1;
+    string format = 2;
+}
+
+message TrailerStatus {
+    string trailer_number = 1;
+}
+
+message Velocities {
+    float linear_velocity = 1;
+    float angular_velocity = 2;
+}
