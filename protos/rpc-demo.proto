@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/empty.proto";
 package RPCDemoPkg;
+option go_package = "/";
 
 service RPCDemo {
     rpc GetMultCoords (google.protobuf.Empty) returns (MultCoords){};
