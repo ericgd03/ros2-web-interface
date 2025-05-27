@@ -6,20 +6,20 @@ This project provides a web interface for ROS 2 using a gRPC server, a Go-based 
 
 Before running the system, ensure the following dependencies are installed:
 
-*Python gRPC tools
+*Python gRPC tools*
 
 ```bash
   pip install grpcio grpcio-tools
 ```
 
-*Go and Protocol Buffers compiler
+*Go and Protocol Buffers compiler*
 
 ```bash
 sudo apt update
 sudo apt install -y golang-go protobuf-compiler
 ```
 
-*gRPC plugins for Go
+*gRPC plugins for Go*
 
 ```bash
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
@@ -36,16 +36,16 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 To generate the Python and Go bindings from the .proto file, run the following commands:
 
-*Python
+*Python*
 
 ```bash
 python3 -m grpc_tools.protoc -I./protos --python_out=./protos --grpc_python_out=./protos ./protos/rpc-demo.proto
 ```
 
-*go
+*go*
 
 ```bash
-python3 -m grpc_tools.protoc -I./protos --python_out=./protos --grpc_python_out=./protos ./protos/rpc-demo.proto
+protoc --go_out=./protos --go-grpc_out=./protos ./protos/rpc-demo.proto
 ```
 
 ## Running the system
