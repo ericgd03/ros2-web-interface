@@ -35,7 +35,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 To generate the Python and Go bindings from the .proto file, run the following commands:
 
-Python*
+Python
 
 ```bash
 python3 -m grpc_tools.protoc -I./protos --python_out=./protos --grpc_python_out=./protos ./protos/rpc-demo.proto
