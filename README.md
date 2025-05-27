@@ -63,3 +63,8 @@ Start the flask app that genarates the dashboard on the web page
 ```bash
 python3 app.py
 ```
+
+Open your browser and go to
+```bash
+http://localhost:8080
+```
