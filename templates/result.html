@@ -33,13 +33,14 @@
             datasets: [{
               label: 'Linear velocity',
               data: [],
-              borderColor: 'blue',
+              borderColor: '#3eff2b',
               fill: false
             }]
           },
           options: {
             animation: false,
             responsive: true,
+            mantainAspectRatio: false,
             scales: {
               x: {
                 title: { display: true, text: 'Time' }
@@ -79,13 +80,14 @@
             datasets: [{
               label: 'Angular velocity',
               data: [],
-              borderColor: 'red',
+              borderColor: '#3eff2b',
               fill: false
             }]
           },
           options: {
             animation: false,
             responsive: true,
+            mantainAspectRatio: false,
             scales: {
               x: {
                 title: { display: true, text: 'Time' }
@@ -121,25 +123,26 @@
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #d3d3d3;
+        background-color: #1a1a1a;
+        color: white;
       }
 
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 40px;
+        margin-top: 60px;
         margin-left: 40px;
         margin-right: 40px;
       }
 
       header h1 {
         margin: 0;
-        font-size: 32px;
+        font-size: 40px;
       }
 
       .logo {
-        height: 30px;
+        height: 40px;
         margin-left: 20px;
       }
 
@@ -154,7 +157,7 @@
         display: flex;
         align-items: center;
         /* justify-content: center; */
-        height: 410px;
+        /* height: 410px; */
         position: relative;
       }
 
@@ -162,6 +165,7 @@
         width: 35%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         /* gap: 5px; */
       }
 
@@ -176,19 +180,27 @@
       }
 
       canvas {
-        background: white;
+        background: rgb(48, 48, 48);
         border-radius: 8px;
         box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4, 1;
+        display: block;
       }
 
       .team-info {
         display: flex;
         align-items: center;
+        font-size: large;
       }
 
       .image {
         border-radius: 8px;
         box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        align-items: center;
+        width: 95%;
+        height: 90%;
       }
     </style>
 
@@ -211,14 +223,17 @@
       </div>
 
       <div class="right">
+
         <div class="status">
           <strong>Current destination: </strong>
           <span id="trailer">Loading...</span>
         </div>
+
         <h3>Linear velocity</h3>
         <canvas id="linear-vel" width="400" height="150"></canvas>
         <h3>Angular velocity</h3>
         <canvas id="angular-vel" width="400" height="150"></canvas>
+        
       </div>
 
     </div>
